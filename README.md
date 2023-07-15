@@ -10,7 +10,7 @@
 | <kbd>Z</kbd> = Downvote                                              |
 | <kbd>X</kbd> = Expand/Collapse Post                                       |
 | <kbd>C</kbd> = View Comments (<kbd>⇧ Shift+C</kbd> to open in new tab)  |
-| <kbd>R</kbd> = Go to community (<kbd>⇧ Shift+R</kbd> to open in new window)                                                 |
+| <kbd>R</kbd> = Go to community (<kbd>⇧ Shift+R</kbd> to open in new tab)                                                 |
 | <kbd>⏎ Enter</kbd> = Visit Link (<kbd>⇧ Shift+⏎ Enter</kbd> to open in new tab)                                     |
 
 |                         Comments                                 |
