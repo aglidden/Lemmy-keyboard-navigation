@@ -1,15 +1,9 @@
 // ==UserScript==
 // @name          lemmy-keyboard-navigation
-// @match         https://*/*
-// @grant         none
-// @version       1.7
-// @author        vmavromatis
-// @author        howdy@thesimplecorner.org
+// @version       1.8
 // @license       GPL3
-// @icon          https://raw.githubusercontent.com/vmavromatis/Lemmy-keyboard-navigation/main/icon.png?inline=true
-// @homepageURL	  https://github.com/vmavromatis/Lemmy-keyboard-navigation
-// @namespace     https://github.com/vmavromatis/Lemmy-keyboard-navigation
-// @description   Easily navigate Lemmy with keyboard arrows
+// @icon          https://raw.githubusercontent.com/InfinibyteF4/Lemmy-keyboard-navigation/main/icon.png
+// @description   Navigate lemmy with your keyboard.
 // ==/UserScript==
 
 //isLemmySite
@@ -39,13 +33,7 @@ const prevPageKey = 'KeyH';
 const upvoteKey = 'KeyA';
 const downvoteKey = 'KeyZ';
 const replycommKey = 'KeyR';
-
-// Stop arrows from moving the page
-window.addEventListener("keydown", function(e) {
-    if(["ArrowUp","ArrowDown"].indexOf(e.code) > -1) {
-        e.preventDefault();
-    }
-}, false);
+const saveKey = 'KeyS';
 
 // Remove scroll animations
 document.documentElement.style = "scroll-behavior: auto";
@@ -174,6 +162,9 @@ function handleKeyPress(event) {
         case expandKey:
             toggleExpand();
             expand = isExpanded() ? true : false;
+            break;
+        case saveKey:
+            save();
             break;
         case openCommentsKey:
             comments();
@@ -355,6 +346,24 @@ function comments() {
         );
     } else {
         currentEntry.querySelector("a.btn[title$='Comments']").click();
+    }
+}
+
+function save() {
+    const saveButton = currentEntry.querySelector("button[aria-label='save']");
+    const unsaveButton = currentEntry.querySelector("button[aria-label='unsave']");
+    const moreButton = currentEntry.querySelector("button[aria-label='more']");
+    if (saveButton) {
+        saveButton.click();
+    } else if (unsaveButton) {
+        unsaveButton.click();
+    } else {
+        moreButton.click();
+        if (saveButton) {
+            saveButton.click();
+        } else if (unsaveButton) {
+            unsaveButton.click();
+        }
     }
 }
 
