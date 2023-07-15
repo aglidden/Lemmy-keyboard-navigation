@@ -29,16 +29,16 @@ const backgroundColor = '#373737';
 const textColor = 'white';
 
 // Set navigation keys with keycodes here: https://www.toptal.com/developers/keycode
-const nextKey = 'ArrowDown';
-const prevKey = 'ArrowUp';
+const nextKey = 'KeyJ';
+const prevKey = 'KeyK';
 const expandKey = 'KeyX';
 const openCommentsKey = 'KeyC';
-const openLinkKey = 'Enter';
-const nextPageKey = 'ArrowRight';
-const prevPageKey = 'ArrowLeft';
+const openLinkandcollapseKey = 'Enter';
+const nextPageKey = 'KeyL';
+const prevPageKey = 'KeyH';
 const upvoteKey = 'KeyA';
 const downvoteKey = 'KeyZ';
-const replyKey = 'KeyR';
+const replycommKey = 'KeyR';
 
 // Stop arrows from moving the page
 window.addEventListener("keydown", function(e) {
@@ -171,34 +171,39 @@ function handleKeyPress(event) {
         case downvoteKey:
             downVote();
             break;
-        case replyKey:
-            // Allow Mac refresh with CMD+R
-            if (event.key !== 'Meta') {
-            reply(event);
-            }break;
         case expandKey:
             toggleExpand();
             expand = isExpanded() ? true : false;
             break;
         case openCommentsKey:
-            if (event.shiftKey) {
-                window.open(
-                    currentEntry.querySelector("a.btn[title$='Comments']").href,
-                );
+            comments();
+            break;
+        case replycommKey:
+            if (window.location.pathname.includes("/post/")) {
+                // Allow Mac refresh with CMD+R
+                if (event.key !== 'Meta') {
+                reply(event);
+                }
             } else {
-                currentEntry.querySelector("a.btn[title$='Comments']").click();
+                community();
             }
             break;
-        case openLinkKey:{
-            const linkElement = currentEntry.querySelector(".col.flex-grow-0.px-0>div>a")
-            if (linkElement) {
-                if (event.shiftKey) {
-                    window.open(linkElement.href);
-                } else {
-                    linkElement.click();
+        case openLinkandcollapseKey:
+            if (window.location.pathname.includes("/post/")) {
+                currentEntry.querySelector("button.btn.btn-sm.btn-link.text-muted.me-2").click();
+            } else {
+                const linkElement = currentEntry.querySelector(".col.flex-grow-1>p>a")
+                    if (linkElement) {
+                        if (event.shiftKey) {
+                            window.open(linkElement.href);
+                        } else {
+                            linkElement.click();
+                        }
+                    } else {
+                        comments();
+                    }
                 }
-            }
-            }break;
+            break;
         case nextPageKey:
         case prevPageKey:{
             const pageButtons = Array.from(document.querySelectorAll(".paginator>button"));
@@ -333,6 +338,25 @@ function reply(event) {
     }
 }
 
+function community() {
+    if (event.shiftKey) {
+        window.open(
+            currentEntry.querySelector("a.community-link").href,
+                );
+        } else {
+            currentEntry.querySelector("a.community-link").click();
+        }
+}
+
+function comments() {
+    if (event.shiftKey) {
+        window.open(
+            currentEntry.querySelector("a.btn[title$='Comments']").href,
+        );
+    } else {
+        currentEntry.querySelector("a.btn[title$='Comments']").click();
+    }
+}
 
 function toggleExpand() {
     const expandButton = currentEntry.querySelector("button[aria-label='Expand here']");
