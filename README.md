@@ -39,3 +39,4 @@
 GPL 3.0
 
 [forked from vmavromatis/Lemmy-keyboard-navigation](https://github.com/vmavromatis/Lemmy-keyboard-navigation)
+[originally from https://lemmy.world/post/10035360](https://lemmy.world/post/1003536)
