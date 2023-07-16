@@ -19,7 +19,7 @@
   }
 
 // Set selected entry colors
-const backgroundColor = '#373737';
+const backgroundColor = '#004742';
 const textColor = 'white';
 
 // Set navigation keys with keycodes here: https://www.toptal.com/developers/keycode
@@ -135,23 +135,7 @@ function handleKeyPress(event) {
     switch (event.code) {
         case nextKey:
         case prevKey:{
-            let selectedEntry;
-            // Next button
-            if (event.code === nextKey) {
-                    selectedEntry = getNextEntry(currentEntry)
-            }
-            // Previous button
-            if (event.code === prevKey) {
-                    selectedEntry = getPrevEntry(currentEntry)
-            }
-            if (selectedEntry) {
-                if (expand) collapseEntry();
-                selectEntry(selectedEntry, true);
-                if (expand) expandEntry();
-            }
-            break;
-            toggleExpand();
-            expand = isExpanded() ? true : false;
+            previousKey();
             }break;
         case upvoteKey:
             upVote();
@@ -181,7 +165,13 @@ function handleKeyPress(event) {
             break;
         case openLinkandcollapseKey:
             if (window.location.pathname.includes("/post/")) {
-                currentEntry.querySelector("button.btn.btn-sm.btn-link.text-muted.me-2").click();
+                const moreReplies = currentEntry.querySelector("button.btn.btn-link.text-muted");
+                if (moreReplies) {
+                    moreReplies.click();
+                    previousKey(5);
+                } else {
+                    currentEntry.querySelector("button.btn.btn-sm.btn-link.text-muted.me-2").click();
+                }
             } else {
                 const linkElement = currentEntry.querySelector(".col.flex-grow-1>p>a")
                     if (linkElement) {
@@ -302,6 +292,27 @@ function isExpanded() {
     }
 
     return false;
+}
+
+function previousKey(n) {
+    let selectedEntry;
+        // Next button
+        if (event.code === nextKey) {
+            selectedEntry = getNextEntry(currentEntry)
+        }
+        // Previous button
+        if (event.code === prevKey) {
+            selectedEntry = getPrevEntry(currentEntry)
+        }
+        // keep the selection near "more replies"
+        if (n == 5) {
+            selectedEntry = getPrevEntry(currentEntry)
+        }
+        if (selectedEntry) {
+            if (expand) collapseEntry();
+                selectEntry(selectedEntry, true);
+            if (expand) expandEntry();
+            }
 }
 
 function upVote() {
