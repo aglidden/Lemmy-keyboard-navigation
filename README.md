@@ -24,7 +24,7 @@
 | <kbd>Z</kbd> = Downvote                                              |
 | <kbd>S</kbd> = Show more options / Save comment                                                |
 | <kbd>R</kbd> = Reply                                                 |
-| <kbd>⏎ Enter</kbd> = Toggle collapse                                     |
+| <kbd>⏎ Enter</kbd> = Toggle collapse / Show more replies                                    |
 
 ### Link Pages View
 ![linkpages](https://github.com/InfinibyteF4/Lemmy-keyboard-navigation/assets/75824710/2f3671cc-c8e8-48d5-a69f-be3fc98a0fa9)
@@ -39,4 +39,5 @@
 GPL 3.0
 
 [forked from vmavromatis/Lemmy-keyboard-navigation](https://github.com/vmavromatis/Lemmy-keyboard-navigation)
+
 [originally from https://lemmy.world/post/10035360](https://lemmy.world/post/1003536)
