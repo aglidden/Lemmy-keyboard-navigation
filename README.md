@@ -7,6 +7,7 @@
 | <kbd>L</kbd> = Next page                  |
 | <kbd>H</kbd> = Previous page                |
 | <kbd>A</kbd> = Upvote                                                |
+| <kbd>S</kbd> = Save Post                                               |
 | <kbd>Z</kbd> = Downvote                                              |
 | <kbd>X</kbd> = Expand/Collapse Post                                       |
 | <kbd>C</kbd> = View Comments (<kbd>⇧ Shift+C</kbd> to open in new tab)  |
@@ -21,15 +22,17 @@
 | <kbd>H</kbd> = Previous same-level Comment                |
 | <kbd>A</kbd> = Upvote                                                |
 | <kbd>Z</kbd> = Downvote                                              |
+| <kbd>S</kbd> = Show more options / Save comment                                                |
 | <kbd>R</kbd> = Reply                                                 |
 | <kbd>⏎ Enter</kbd> = Toggle collapse                                     |
 
 ### Link Pages View
-![linkpages](https://github.com/InfinibyteF4/Lemmy-keyboard-navigation/assets/75824710/1717aca9-ccfe-4c21-a554-61875d791ebf)
+![linkpages](https://github.com/InfinibyteF4/Lemmy-keyboard-navigation/assets/75824710/2f3671cc-c8e8-48d5-a69f-be3fc98a0fa9)
 
 
 ### Comment View
-![comments](https://github.com/InfinibyteF4/Lemmy-keyboard-navigation/assets/75824710/facf822c-7a83-4ce9-9768-ac955378a528)
+![comments](https://github.com/InfinibyteF4/Lemmy-keyboard-navigation/assets/75824710/2786b5a8-f8c2-434c-8fd4-e3d5b1fe0e83)
+
 
 
 ## Licence: 
