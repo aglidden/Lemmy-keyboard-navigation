@@ -10,9 +10,9 @@
 | <kbd>S</kbd> = Save Post                                               |
 | <kbd>Z</kbd> = Downvote                                              |
 | <kbd>X</kbd> = Expand/Collapse Post                                       |
-| <kbd>C</kbd> = View Comments (<kbd>⇧ Shift+C</kbd> to open in new tab)  |
-| <kbd>R</kbd> = Go to community (<kbd>⇧ Shift+R</kbd> to open in new tab)                                                 |
-| <kbd>⏎ Enter</kbd> = Visit Link (<kbd>⇧ Shift+⏎ Enter</kbd> to open in new tab)                                     |
+| <kbd>C</kbd> = View Comments (<kbd>⇧ Shift</kbd> + <kbd>C</kbd> to open in new tab)  |
+| <kbd>R</kbd> = Go to community (<kbd>⇧ Shift</kbd> + <kbd>R</kbd> to open in new tab)                                                 |
+| <kbd>⏎ Enter</kbd> = Visit Link (<kbd>⇧ Shift</kbd> + <kbd>⏎ Enter</kbd> to open in new tab)                                     |
 
 |                         Comments                                 |
 |----------------------------------------------------------------------|
